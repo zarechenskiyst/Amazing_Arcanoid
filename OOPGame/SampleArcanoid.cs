@@ -67,9 +67,9 @@ namespace OOPGame
         private void Restart()
         {
             List<SampleBrick> bricks = new List<SampleBrick>();
-            for (int j = 2; j < 3; j++)
+            for (int j = 0; j < 3; j++)
             {
-                for (int i = 4; i < 5; i++)
+                for (int i = 0; i < 8; i++)
                     bricks.Add(new SampleBrick(70 * i, 25 * j));
             }
             this.bricks = bricks;
