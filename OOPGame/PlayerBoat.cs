@@ -20,31 +20,23 @@ namespace OOPGame
             this.y =560;
         }
 
-        public PlayerBoat(ConsoleGraphics graphics)
-        {
-            this.x = 20;
-            this.y = graphics.ClientHeight-13;
-        }
-
         public void Render(ConsoleGraphics graphics)
         {
+            if (Input.IsKeyDown(Keys.LEFT))
+            {
+                if (x > 0)
+                    x -= speed;
+            }
+            else if (Input.IsKeyDown(Keys.RIGHT))
+            {
+                if (x + w <graphics.ClientWidth)
+                    x += speed;
+            }
             graphics.FillRectangle(0xFFFF0000, x, y, w, h);
         }
 
         public void Update(GameEngine engine)
         {
-
-            if (Input.IsKeyDown(Keys.LEFT))
-            {
-                if (x > Console.WindowLeft)
-                    x -= speed;
-            }
-            else if (Input.IsKeyDown(Keys.RIGHT))
-            {
-                if (x + w <Console.BufferWidth*8+11/*382*/)
-                    x += speed;
-            }
-
         }
 
        

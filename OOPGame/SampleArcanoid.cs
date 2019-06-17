@@ -59,7 +59,6 @@ namespace OOPGame
              }
              ball.Cross(boat);
              ball.Update(engine);
-             boat.Update(engine);
              btRestart.Update(engine);
              btHightScore.Update(engine);
         }
@@ -99,8 +98,8 @@ namespace OOPGame
         }
         private void MouseRestart(object obj, EventArgs e)
         {
-            Restart();
-            start = true;
+           Restart();
+           start = true;
         }
         private void UpdatePoints(int points)
         {

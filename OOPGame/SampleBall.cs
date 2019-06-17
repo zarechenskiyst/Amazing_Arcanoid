@@ -37,6 +37,10 @@ namespace OOPGame
                               );
                 }
             }
+            if (x - r <= 0 || x + r >= graphics.ClientWidth)
+                speedX *= -1;
+            if (y - r <= 0)
+                speedY *= -1;
         }
 
         public bool Cross(SampleBrick brick)
@@ -86,10 +90,7 @@ namespace OOPGame
 
         public void Update(GameEngine engine)
         {
-            if (x - r <= Console.WindowLeft || x + r >= Console.BufferWidth*8+11/* 540*/)
-                speedX *= -1;
-            if (y - r <= Console.WindowTop)
-                speedY *= -1;
+            
 
             x += speedX;
             y += speedY;
