@@ -16,7 +16,7 @@ namespace OOPGame {
 
             ConsoleGraphics graphics = new ConsoleGraphics();
 
-            GameEngine engine = new SampleGameEngine(graphics);
+            GameEngine engine = new ArcanoidGameEngine(graphics);
             engine.Start();
     }
   }

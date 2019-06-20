@@ -7,10 +7,10 @@ using NConsoleGraphics;
 
 namespace OOPGame
 {
-    class  SampleBrick : TemplateFigure, IGameObject
+    class  ArcanoidBrick : TemplateFigure, IGameObject
     {
         public int w, h;
-        public SampleBrick(int x, int y):base(x,y)
+        public ArcanoidBrick(int x, int y):base(x,y)
         {
             w = 50;
             h = 20;

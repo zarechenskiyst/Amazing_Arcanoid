@@ -7,12 +7,12 @@ using NConsoleGraphics;
 
 namespace OOPGame
 {
-    class SampleBall : TemplateFigure, IGameObject
+    class ArcanoidBall : TemplateFigure, IGameObject
     {
         private int speedX;
         private int speedY;
         private int r;
-        public SampleBall(int x, int y, int speed)
+        public ArcanoidBall(int x, int y, int speed)
         {
             r = 10;
             this.x = x;
@@ -43,19 +43,19 @@ namespace OOPGame
                 speedY *= -1;
         }
 
-        public bool Cross(SampleBrick brick)
+        public bool Cross(ArcanoidBrick brick)
         {
-            bool cross = isCircleToRect( brick.x, brick.y, brick.w, brick.h);
+            bool cross = IsCircleToRect(brick.x, brick.y, brick.w, brick.h);
             if (cross)
                 ChageSpeedIfCross(brick.x, brick.y, brick.w, brick.h);
             return cross;
         }
 
-        public void Cross(PlayerBoat boat)
+        public void Cross(ArcanoidPlayerBoat boat)
         {
-            if (isCircleToRect(boat.x, boat.y, boat.w, boat.h))
-               ChageSpeedIfCross(boat.x, boat.y, boat.w, boat.h);              
-       }
+            if (IsCircleToRect(boat.x, boat.y, boat.w, boat.h))
+                ChageSpeedIfCross(boat.x, boat.y, boat.w, boat.h);              
+        }
 
         private void ChageSpeedIfCross(int x, int y, int w, int h)
         {
@@ -67,7 +67,7 @@ namespace OOPGame
                 speedY *= -1;
         }
 
-        private bool isCircleToRect(int rx, int ry, int width, int height)
+        private bool IsCircleToRect(int rx, int ry, int width, int height)
         {
             int x = this.x;
             int y = this.y;
@@ -77,25 +77,18 @@ namespace OOPGame
             else if (this.x > (rx + width))
               x = rx + width;
             
-
             if (this.y < ry)
                 y = ry;
             else if (this.y > (ry + height))
                 y = ry + height;
-
-
 
             return (((this.x - x) * (this.x - x) + (this.y - y) * (this.y - y)) <= (this.r * this.r));
         }
 
         public void Update(GameEngine engine)
         {
-            
-
             x += speedX;
             y += speedY;
         }
-
-       
     }
 }

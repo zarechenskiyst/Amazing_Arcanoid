@@ -7,14 +7,14 @@ using NConsoleGraphics;
 
 namespace OOPGame
 {
-    class PlayerBoat : TemplateFigure, IGameObject
+    class ArcanoidPlayerBoat : TemplateFigure, IGameObject
     {
 
         private int speed = 10;
         public int w = 150;
         public int h = 12;
 
-        public PlayerBoat()
+        public ArcanoidPlayerBoat()
         {
             this.x = 200;
             this.y =560;

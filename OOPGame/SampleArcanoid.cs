@@ -10,9 +10,9 @@ namespace OOPGame
 {
     class SampleArcanoid : IGameObject
     {
-        private List<SampleBrick> bricks;
-        private SampleBall ball;
-        private PlayerBoat boat;
+        private List<ArcanoidBrick> bricks;
+        private ArcanoidBall ball;
+        private ArcanoidPlayerBoat boat;
         private int points;
         private Button btRestart, btHightScore;
         private string message;
@@ -23,7 +23,7 @@ namespace OOPGame
             start = false;
             message = "I want to play with you in one game...";
             Restart();
-    }
+        }
         public void Render(ConsoleGraphics graphics)
         {
             if (!start)
@@ -65,15 +65,15 @@ namespace OOPGame
 
         private void Restart()
         {
-            List<SampleBrick> bricks = new List<SampleBrick>();
+            List<ArcanoidBrick> bricks = new List<ArcanoidBrick>();
             for (int j = 0; j < 3; j++)
             {
                 for (int i = 0; i < 8; i++)
-                    bricks.Add(new SampleBrick(70 * i, 25 * j));
+                    bricks.Add(new ArcanoidBrick(70 * i, 25 * j));
             }
             this.bricks = bricks;
-            this.ball = new SampleBall(220, 555, 10);
-            this.boat = new PlayerBoat();
+            this.ball = new ArcanoidBall(220, 555, 10);
+            this.boat = new ArcanoidPlayerBoat();
             this.points = 0;
             btRestart = new Button();
             btHightScore = new Button();
